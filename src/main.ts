@@ -20,6 +20,14 @@ import "@/styles/element.scss";
 import "virtual:svg-icons-register";
 // bootstrap icon
 import "bootstrap-icons/font/bootstrap-icons.css";
+// bootstrap
+import "bootstrap/dist/css/bootstrap.min.css";
+// aos
+import "aos/dist/aos.css";
+
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
+import AOS from "aos";
 
 // element plus
 import ElementPlus from "element-plus";
@@ -46,3 +54,8 @@ Object.keys(Icons).forEach(key => {
 });
 
 app.use(ElementPlus).use(directives).use(router).use(I18n).use(pinia).mount("#app");
+
+AOS.init({
+  duration: 1000,
+  once: true
+});

@@ -1,11 +1,14 @@
 <template>
-  <el-config-provider :locale="locale" :size="assemblySize" :button="buttonConfig">
-    <router-view></router-view>
-  </el-config-provider>
+  <Navbar />
+  <div class="main-content">
+    <el-config-provider :locale="locale" :size="assemblySize" :button="buttonConfig">
+      <router-view></router-view>
+    </el-config-provider>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, reactive, computed } from "vue";
+import { computed, onMounted, reactive } from "vue";
 import { useI18n } from "vue-i18n";
 import { getBrowserLang } from "@/utils";
 import { useTheme } from "@/hooks/useTheme";
@@ -14,6 +17,7 @@ import { LanguageType } from "./stores/interface";
 import { useGlobalStore } from "@/stores/modules/global";
 import en from "element-plus/es/locale/lang/en";
 import zhCn from "element-plus/es/locale/lang/zh-cn";
+import Navbar from "@/components/Home/Navbar.vue";
 
 const globalStore = useGlobalStore();
 
@@ -42,3 +46,12 @@ const assemblySize = computed(() => globalStore.assemblySize);
 // element button config
 const buttonConfig = reactive({ autoInsertSpace: false });
 </script>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+.main-content {
+  padding-top: 56px;
+}
+</style>

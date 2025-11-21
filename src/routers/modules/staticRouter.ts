@@ -7,7 +7,36 @@ import { HOME_URL, LOGIN_URL } from "@/config";
 export const staticRouter: RouteRecordRaw[] = [
   {
     path: "/",
-    redirect: HOME_URL
+    name: "welcome",
+    component: () => import("@/views/home/Welcome.vue"),
+    props: { showAll: true },
+    children: []
+  },
+  {
+    path: "/aboutus",
+    name: "aboutus",
+    component: () => import("@/views/home/Welcome.vue"),
+    props: { showAll: false, section: "aboutus" },
+    children: []
+  },
+  {
+    path: "/services",
+    name: "services",
+    component: () => import("@/views/home/Welcome.vue"),
+    props: { showAll: false, section: "services" },
+    children: []
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component: () => import("@/views/home/Welcome.vue"),
+    props: { showAll: false, section: "contact" },
+    children: []
+  },
+  {
+    path: "/pdf-merge",
+    name: "merge",
+    component: () => import("@/views/pdf/PdfMerge.vue")
   },
   {
     path: LOGIN_URL,
