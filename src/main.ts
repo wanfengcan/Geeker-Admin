@@ -18,6 +18,9 @@ import "@/styles/element-dark.scss";
 import "@/styles/element.scss";
 // svg icons
 import "virtual:svg-icons-register";
+// bootstrap icon
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 // element plus
 import ElementPlus from "element-plus";
 // element icons
